@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.com.feiron.domain.Profnastil;
 import ua.com.feiron.repository.ProfnastilRepository;
+import ua.com.feiron.validation.ProfnastilValidator;
 
 import java.util.List;
 
@@ -17,10 +18,12 @@ import java.util.List;
 public class ProfnastilController {
 
     private ProfnastilRepository profnastilRepository;
+    private ProfnastilValidator profnastilValidator;
 
     @Autowired
-    public  ProfnastilController(ProfnastilRepository profnastilRepository){
+    public  ProfnastilController(ProfnastilRepository profnastilRepository, ProfnastilValidator profnastilValidator){
         this.profnastilRepository = profnastilRepository;
+        this.profnastilValidator = profnastilValidator;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -36,7 +39,11 @@ public class ProfnastilController {
     }
 
     @RequestMapping(value = "addProfnastil", method = RequestMethod.POST)
-    public String addProfnastil(@ModelAttribute("profnastil") Profnastil profnastil){
+    public String addProfnastil(@ModelAttribute("profnastil") Profnastil profnastil, BindingResult bindingResult){
+        this.profnastilValidator.validate(profnastil, bindingResult);
+        if (bindingResult.hasErrors()){
+            return "addProfnastil";
+        }
 
         this.profnastilRepository.addProfnastil(profnastil);
         return "redirect:/";
