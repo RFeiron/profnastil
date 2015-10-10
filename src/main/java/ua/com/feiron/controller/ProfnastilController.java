@@ -3,11 +3,9 @@ package ua.com.feiron.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import ua.com.feiron.domain.Profnastil;
 import ua.com.feiron.repository.ProfnastilRepository;
 import ua.com.feiron.validation.ProfnastilValidator;
@@ -54,5 +52,21 @@ public class ProfnastilController {
 
         this.profnastilRepository.removeProfnastil(id);
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "calc", method = RequestMethod.GET)
+    public ModelMap say(@RequestParam(required = false) Integer workB, @RequestParam(required = false) Integer obshayaB,
+                        @RequestParam(required = false) Integer a, @RequestParam(required = false) Integer b){
+        ModelMap modelMap = new ModelMap();
+        if (a != null && b != null && workB != null && obshayaB != null ){
+            modelMap.addAttribute("a", a);
+            modelMap.addAttribute("b", b);
+            modelMap.addAttribute("workB", workB);
+            modelMap.addAttribute("obshayaB", obshayaB);
+            modelMap.addAttribute("result", (b / workB) * obshayaB * a);
+        }else {
+            modelMap.addAttribute("result", "");
+        }
+        return modelMap;
     }
 }

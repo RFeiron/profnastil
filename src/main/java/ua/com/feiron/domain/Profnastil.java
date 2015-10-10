@@ -20,6 +20,29 @@ public class Profnastil {
     @Column(name = "OBSHAYAB")
     private Integer obshayaB;
 
+    @Column(name = "A")
+    private Integer a;
+
+    @Column(name = "B")
+    private Integer b;
+
+
+    public Integer getA() {
+        return a;
+    }
+
+    public void setA(Integer a) {
+        this.a = a;
+    }
+
+    public Integer getB() {
+        return b;
+    }
+
+    public void setB(Integer b) {
+        this.b = b;
+    }
+
     public String getName() {
         return name;
     }
