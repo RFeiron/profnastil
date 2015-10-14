@@ -1,6 +1,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <jsp:directive.page contentType="text/html;charset=Utf-8"/>
 <t:template>
   <form:form method="post" action="addProfnastil" commandName="profnastil">

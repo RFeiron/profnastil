@@ -55,8 +55,8 @@ public class ProfnastilController {
     }
 
     @RequestMapping(value = "calc", method = RequestMethod.GET)
-    public ModelMap say(@RequestParam(required = false) Integer workB, @RequestParam(required = false) Integer obshayaB,
-                        @RequestParam(required = false) Integer a, @RequestParam(required = false) Integer b){
+    public ModelMap say(@RequestParam(required = false) Double workB, @RequestParam(required = false) Double obshayaB,
+                        @RequestParam(required = false) Double a, @RequestParam(required = false) Double b){
         ModelMap modelMap = new ModelMap();
         if (a != null && b != null && workB != null && obshayaB != null ){
             modelMap.addAttribute("a", a);
@@ -64,6 +64,7 @@ public class ProfnastilController {
             modelMap.addAttribute("workB", workB);
             modelMap.addAttribute("obshayaB", obshayaB);
             modelMap.addAttribute("result", (b / workB) * obshayaB * a);
+
         }else {
             modelMap.addAttribute("result", "");
         }

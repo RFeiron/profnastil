@@ -15,37 +15,16 @@ public class Profnastil {
     private String name;
 
     @Column(name = "WORKB")
-    private Integer workB;
+    private Double workB;
 
     @Column(name = "OBSHAYAB")
-    private Integer obshayaB;
+    private Double obshayaB;
 
     @Column(name = "A")
-    private Integer a;
+    private Double a;
 
     @Column(name = "B")
-    private Integer b;
-
-
-    public Integer getA() {
-        return a;
-    }
-
-    public void setA(Integer a) {
-        this.a = a;
-    }
-
-    public Integer getB() {
-        return b;
-    }
-
-    public void setB(Integer b) {
-        this.b = b;
-    }
-
-    public String getName() {
-        return name;
-    }
+    private Double b;
 
     public Integer getId() {
         return id;
@@ -55,23 +34,43 @@ public class Profnastil {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public Integer getWorkB() {
+    public Double getWorkB() {
         return workB;
     }
 
-    public void setWorkB(Integer workB) {
+    public void setWorkB(Double workB) {
         this.workB = workB;
     }
 
-    public Integer getObshayaB() {
+    public Double getObshayaB() {
         return obshayaB;
     }
 
-    public void setObshayaB(Integer obshayaB) {
+    public void setObshayaB(Double obshayaB) {
         this.obshayaB = obshayaB;
+    }
+
+    public Double getA() {
+        return a;
+    }
+
+    public void setA(Double a) {
+        this.a = a;
+    }
+
+    public Double getB() {
+        return b;
+    }
+
+    public void setB(Double b) {
+        this.b = b;
     }
 }
