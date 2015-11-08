@@ -53,6 +53,11 @@ public class ProfnastilController {
         this.profnastilRepository.removeProfnastil(id);
         return "redirect:/";
     }
+    @RequestMapping(value = "edit/{id}", method = RequestMethod.GET)
+    public void getEdit(@RequestParam(value = "id", required = true) Integer id, Model model){
+
+        model.addAttribute("profnastilAtribute", id);
+    }
 
     @RequestMapping(value = "calc", method = RequestMethod.GET)
     public ModelMap say(@RequestParam(required = false) Double workB, @RequestParam(required = false) Double obshayaB,
@@ -63,10 +68,32 @@ public class ProfnastilController {
             modelMap.addAttribute("b", b);
             modelMap.addAttribute("workB", workB);
             modelMap.addAttribute("obshayaB", obshayaB);
-            modelMap.addAttribute("result", (b / workB) * obshayaB * a);
+            modelMap.addAttribute("result", ((Math.ceil(b / workB)) * a * obshayaB));
+            modelMap.addAttribute("sam", (int)((b / workB) * a * obshayaB * 6));
+            modelMap.addAttribute("kl",(int)(Math.ceil(b / workB)));
 
         }else {
-            modelMap.addAttribute("result", "");
+            modelMap.addAttribute("result",  "" );
+        }
+        return modelMap;
+    }
+
+    @RequestMapping(value = "calc1", method = RequestMethod.GET)
+    public ModelMap twoSk(@RequestParam(required = false) Double workB, @RequestParam(required = false) Double obshayaB,
+                        @RequestParam(required = false) Double a, @RequestParam(required = false) Double b){
+        ModelMap modelMap = new ModelMap();
+        if (a != null && b != null && workB != null && obshayaB != null ){
+            modelMap.addAttribute("a", a);
+            modelMap.addAttribute("b", b);
+            modelMap.addAttribute("workB", workB);
+            modelMap.addAttribute("obshayaB", obshayaB);
+            modelMap.addAttribute("result", ((Math.ceil(b / workB)) * a * obshayaB));
+            modelMap.addAttribute("sam", (int)((b / workB) * a * obshayaB * 6));
+            modelMap.addAttribute("kl",(int)(Math.ceil(b / workB)));
+
+
+        }else {
+            modelMap.addAttribute("result",  "" );
         }
         return modelMap;
     }

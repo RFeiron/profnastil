@@ -4,6 +4,7 @@
 
 <jsp:directive.page contentType="text/html;charset=Utf-8"/>
 <t:template>
+  <a href="/">Главная</a>
   <form:form method="post" action="addProfnastil" commandName="profnastil">
     <table>
       <tr>

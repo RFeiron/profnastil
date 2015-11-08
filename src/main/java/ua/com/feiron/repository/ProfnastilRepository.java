@@ -1,5 +1,6 @@
 package ua.com.feiron.repository;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -29,4 +30,17 @@ public class ProfnastilRepository {
             this.sessionFactory.getCurrentSession().delete(profnastil);
         }
     }
+
+    public  void edit(Profnastil profnastil){
+        Session session = sessionFactory.getCurrentSession();
+        Profnastil existingProfnastil1 = (Profnastil)session.get(Profnastil.class, profnastil.getId());
+
+        existingProfnastil1.setName(profnastil.getName());
+        existingProfnastil1.setObshayaB(profnastil.getObshayaB());
+        existingProfnastil1.setWorkB(profnastil.getWorkB());
+
+        session.save(existingProfnastil1);
+    }
+
+
 }

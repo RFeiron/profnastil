@@ -7,9 +7,21 @@
 <t:template>
 
     <form:form method="get" action="calc">
+        <a href="/">Главная</a>
 
-        <h1>Калькулятор</h1>
+        <h1>Калькулятор односкатной кровли</h1>
         <table>
+            <ol>
+                <li>
+                    <a href="calc">Односкатная</a>
+                </li>
+                <li><a href="calc1">Двускатная</a> </li>
+                <li><a href="#">Ломаная</a> </li>
+                <li><a href="#">Вальмовая</a> </li>
+                <li><a href="#">Мансардная</a> </li>
+                <li><a href="#">Плоская</a> </li>
+                <li><a href="#">Забор</a> </li>
+            </ol>
 
             <tr>
                 <td>
@@ -39,7 +51,12 @@
                 <td><input type="text" name="obshayaB" value="${obshayaB}"/></td>
 
             </tr>
-            <td><input type="text" name="result" value="${result}"/></td>
+            <td><p>Количество профнастила:</p>
+            <input type="text" name="result" value="${result}"/>м.кв.
+            <p>Количество саморезов: </p>
+            <input type="text" name="sam" value="${sam}"/>шт.
+                <p>Количество листов:</p>
+                <input type="text" name="kl" value="${kl}"/>шт.</td>
 
             <td colspan="2"><input type="submit" value="считать"/></td>
         </table>

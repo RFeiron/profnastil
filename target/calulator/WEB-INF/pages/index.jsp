@@ -23,6 +23,7 @@
                     <td>${profnastil.obshayaB}</td>
 
                     <td><a href="deleteProfnastil/${profnastil.id}">Delete</a></td>
+                    <td><a href="edit/${profnastil.id}">Edit</a></td>
 
                 </tr>
             </c:forEach>
@@ -32,5 +33,6 @@
     <a href="addProfnastil">Add List</a>
 
     <a href="calc">Calculator</a>
+    <p><a href="calc1">Calc1</a> </p>
 </t:template>
 
