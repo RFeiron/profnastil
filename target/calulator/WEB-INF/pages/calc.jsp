@@ -9,8 +9,9 @@
     <form:form method="get" action="calc">
         <a href="/">Главная</a>
 
-        <h1>Калькулятор односкатной кровли</h1>
+        <h1 id="header">Калькулятор односкатной кровли</h1>
         <table>
+            <div id="nav">
             <ol>
                 <li>
                     <a href="calc">Односкатная</a>
@@ -22,7 +23,9 @@
                 <li><a href="#">Плоская</a> </li>
                 <li><a href="#">Забор</a> </li>
             </ol>
-
+            </div>
+            <img src="\resources\img\i.jpg">
+            <div>
             <tr>
                 <td>
                     <form><label path="a"> Длина </label></form>
@@ -41,16 +44,19 @@
                 <td>
                     <form><label path="workB"> Полезная ширина листа </label></form>
                 </td>
-                <td><input type="text" name="workB" value="${workB}"/></td>
+                <td><input type="text" name="workB" value="${profnastil.workB}"/></td>
             </tr>
+
 
             <tr>
                 <td>
                     <form><label path="obshayaB">Общая ширина листа</label></form>
                 </td>
-                <td><input type="text" name="obshayaB" value="${obshayaB}"/></td>
+                <td><input type="text" name="obshayaB" value="${profnastil.obshayaB}"/></td>
 
             </tr>
+            </div>
+
             <td><p>Количество профнастила:</p>
             <input type="text" name="result" value="${result}"/>м.кв.
             <p>Количество саморезов: </p>

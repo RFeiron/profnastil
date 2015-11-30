@@ -6,33 +6,7 @@
 <jsp:directive.page contentType="text/html;charset=Utf-8"/>
 <t:template>
 
-    <c:if test="${!empty lists}">
-        <table class="book-list-table">
-            <tr>
-                <th>Название</th>
-                <th>Рабочая ширина</th>
-                <th>Общая ширина</th>
-
-                <th>&nbsp;</th>
-
-            </tr>
-            <c:forEach items="${lists}" var="profnastil">
-                <tr>
-                    <td>${profnastil.name}</td>
-                    <td>${profnastil.workB}</td>
-                    <td>${profnastil.obshayaB}</td>
-
-                    <td><a href="deleteProfnastil/${profnastil.id}">Delete</a></td>
-                    <td><a href="edit/${profnastil.id}">Edit</a></td>
-
-                </tr>
-            </c:forEach>
-        </table>
-    </c:if>
-
-    <a href="addProfnastil">Add List</a>
-
-    <a href="calc">Calculator</a>
-    <p><a href="calc1">Calc1</a> </p>
+  <a href="calc"><img src="\resources\img\calc.jpg"></a>
+  <a href="index1"><img src="\resources\img\bd.jpg"></a>
 </t:template>
 

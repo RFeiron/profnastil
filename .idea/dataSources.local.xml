@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - profnastil@localhost" uuid="936bd993-202c-4381-9a3f-c80869a210b9">
-      <secret-storage>memory</secret-storage>
-      <user-name>root</user-name>
-      <schema-pattern>profnastil.*</schema-pattern>
-      <default-schemas>profnastil.*</default-schemas>
+    <data-source name="MySQL - profnastil@localhost" uuid="936bd993-202c-4381-9a3f-c80869a210b9" />
+    <data-source name="MySQL" uuid="4b495d2b-2d19-490b-934c-eca9b1522c1c">
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <proxy-host>ssh://565a18d089f5cf28bf00000a@calulatorwar-feiron.rhcloud.com/~/git/calulatorwar.git/</proxy-host>
+        <proxy-port>22</proxy-port>
+        <secret-storage>master_key</secret-storage>
+        <user>admin2xILRSb</user>
+        <use-password>true</use-password>
+      </ssh-properties>
     </data-source>
   </component>
 </project>
